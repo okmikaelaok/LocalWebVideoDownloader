@@ -1,0 +1,87 @@
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*.pyc.*
+*$py.class
+
+# Packaging and build output
+build/
+dist/
+.eggs/
+*.egg
+*.egg-info/
+pip-wheel-metadata/
+
+# Native WebView2 build output and project-local dependency caches
+desktop/**/bin/
+desktop/**/obj/
+.nuget/
+.dotnet-cli/
+.dotnet-home/
+*.WebView2/
+
+# Test, lint, type-check, and coverage output
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.pytype/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+junit.xml
+
+# Downloader runtime output
+downloads/
+/VideosDownloaded/
+*.part
+*.part-Frag*
+*.ytdl
+*.log
+
+# Local secrets and authentication exports
+.env
+.env.*
+!.env.example
+cookies.txt
+*.cookies.txt
+.netrc
+_netrc
+
+# IDE and editor state
+.vs/
+.idea/
+*.iml
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+
+# Local planning documents
+REQUIREMENTS.md
+
+# Local backups
+/backup/
+
+# Windows and macOS metadata
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store

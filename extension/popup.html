@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LocalWebVideoDownloader</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>LocalWebVideoDownloader</h1>
+        <p id="page-label" class="muted">Checking the active tab…</p>
+      </header>
+
+      <section class="controls" aria-labelledby="detection-heading">
+        <div class="section-heading">
+          <h2 id="detection-heading">Detection</h2>
+          <span id="state-badge" class="badge">Off</span>
+        </div>
+        <p id="status" role="status">Start detection, then play the video in this tab.</p>
+        <div class="button-row">
+          <button id="start-button" class="primary" type="button">Start detection</button>
+          <button id="stop-button" type="button" disabled>Stop</button>
+          <button id="clear-button" type="button" disabled>Clear</button>
+        </div>
+      </section>
+
+      <section aria-labelledby="sources-heading">
+        <div class="section-heading">
+          <h2 id="sources-heading">Detected sources</h2>
+          <span id="candidate-count" class="count">0</span>
+        </div>
+        <p id="empty-message" class="empty">
+          No media detected yet. Start detection and press Play on the page.
+        </p>
+        <fieldset id="candidate-list" aria-label="Detected media sources"></fieldset>
+      </section>
+
+      <button id="open-button" class="primary wide" type="button" disabled>
+        Open in desktop app
+      </button>
+
+      <p class="privacy-note">
+        Detection runs only for this tab. Signed query values are hidden and captures stay in
+        browser-session memory.
+      </p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "local-web-video-downloader"
+version = "0.1.0"
+description = "LocalWebVideoDownloader: inspect web video metadata and download selected quality and captions."
+readme = "README.md"
+license = "AGPL-3.0-only"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+authors = [
+  { name = "LocalWebVideoDownloader contributors" },
+]
+dependencies = [
+  "yt-dlp==2026.8.19",
+]
+
+[project.optional-dependencies]
+dev = [
+  "ruff>=0.9",
+]
+
+[project.scripts]
+local-web-video-downloader = "localwebvideodownloader.cli:main"
+local-web-video-downloader-gui = "localwebvideodownloader.gui:main"
+local-web-video-downloader-native = "localwebvideodownloader.native_host:main"
+local-web-video-downloader-desktop = "localwebvideodownloader.desktop:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]

@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>LocalWebVideoDownloader</AssemblyName>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <PackageLicenseExpression>AGPL-3.0-only</PackageLicenseExpression>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.4258.31" GeneratePathProperty="true" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\LICENSE" Link="LICENSE"
+          CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <None Include="$(PkgMicrosoft_Web_WebView2)\LICENSE.txt" Link="third-party\WebView2\LICENSE.txt"
+          CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <None Include="$(PkgMicrosoft_Web_WebView2)\NOTICE.txt" Link="third-party\WebView2\NOTICE.txt"
+          CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+  <!-- WebView2 adds both UI adapters; this project only uses WinForms. -->
+  <Target Name="RemoveUnusedWpfAdapter" BeforeTargets="ResolveAssemblyReferences">
+    <ItemGroup>
+      <Reference Remove="@(Reference)" Condition="'%(Reference.Filename)' == 'Microsoft.Web.WebView2.Wpf'" />
+    </ItemGroup>
+  </Target>
+</Project>

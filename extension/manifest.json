@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "LocalWebVideoDownloader Companion",
+  "version": "0.1.0",
+  "description": "Detect media requested by an active tab and open a selected source in the LocalWebVideoDownloader app.",
+  "minimum_chrome_version": "102",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "webRequest"
+  ],
+  "optional_permissions": [
+    "nativeMessaging"
+  ],
+  "optional_host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_title": "LocalWebVideoDownloader",
+    "default_popup": "popup.html"
+  }
+}

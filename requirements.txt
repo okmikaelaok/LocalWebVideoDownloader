@@ -1,0 +1,2 @@
+# Dependency versions used by the verified development environment.
+yt-dlp==2026.8.19
